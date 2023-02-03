@@ -4,6 +4,8 @@
  */
 package no.ntnu.idata2305.juliangm.assignment1;
 
+import no.ntnu.idata2305.juliangm.assignment1.computation.SearchSimulator;
+
 /**
  *
  * @author julian
@@ -14,7 +16,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+            SearchSimulator.processClientRequest();
+            System.out.println("We're done here!");
+        } catch (Exception e) {
+            System.err.println(e);
+        }
     }
     
 }
