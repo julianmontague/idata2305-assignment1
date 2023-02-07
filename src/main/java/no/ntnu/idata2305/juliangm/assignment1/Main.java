@@ -5,7 +5,6 @@
 package no.ntnu.idata2305.juliangm.assignment1;
 
 import no.ntnu.idata2305.juliangm.assignment1.servers.MultiThreadedServer;
-import no.ntnu.idata2305.juliangm.assignment1.servers.SingleThreadedServer;
 
 /**
  *

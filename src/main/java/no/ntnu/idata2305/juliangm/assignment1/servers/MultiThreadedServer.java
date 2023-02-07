@@ -43,32 +43,18 @@ public class MultiThreadedServer implements Runnable {
         while (!isStopped()) {
             Socket clientSocket = null;
             try {
+                // wait for a connection
                 clientSocket = this.serverSocket.accept();
+
+                // on receiving a request, execute the heavy computation
+                new Thread(
+                        new AsyncSearchSimulator(
+                                clientSocket,
+                                "Multithreaded Server"
+                        )
+                ).start();
             } catch (IOException e) {
                 throw new RuntimeException(e);
-            }
-            // wait for a connection
-            // on receiving a request, execute the heavy computation
-            new Thread(
-                    new AsyncSearchSimulator(
-                            clientSocket,
-                            "Multithreaded Server"
-                    )
-            ).start();
-            try {
-                // accept the client connection
-                // create a new thread to handle the request
-                OutputStream outputStream = clientSocket.getOutputStream();
-                // execute the heavy computation
-                outputStream.write(SearchSimulator.processClientRequest().getBytes());
-                // flush the output stream
-                outputStream.flush();
-                // close the client socket
-                clientSocket.close();
-
-            } catch (Exception e) {
-                // throw a runtime exception
-                throw new RuntimeException(e + "Error accepting client connection");
             }
         }
 
