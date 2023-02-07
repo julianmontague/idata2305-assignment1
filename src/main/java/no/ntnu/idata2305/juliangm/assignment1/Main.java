@@ -4,6 +4,7 @@
  */
 package no.ntnu.idata2305.juliangm.assignment1;
 
+import no.ntnu.idata2305.juliangm.assignment1.servers.MultiThreadedServer;
 import no.ntnu.idata2305.juliangm.assignment1.servers.SingleThreadedServer;
 
 /**
@@ -16,7 +17,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Thread(new SingleThreadedServer()).start();
+        new Thread(new MultiThreadedServer(8080)).start();
     }
     
 }

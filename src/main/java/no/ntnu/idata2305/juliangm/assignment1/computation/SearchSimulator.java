@@ -20,5 +20,6 @@ public class SearchSimulator {
         System.out.println("Request processing ended at: " + time2);
         return ResponseGenerator.generatorResponseHeader() +
             ResponseGenerator.generatorResponseHTML(time1, time2);
+
     }
 }

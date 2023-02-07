@@ -13,7 +13,7 @@ public class ResponseGenerator {
     public static String generatorResponseHTML(long time1, long time2) {
         return ("<html><body>"
                 + "Singlethreaded Server: "
-                + time1 + " - " + time2
+                + time1 + " - " + time2 + " = " + (time2 - time1) + " ms"
                 + "</body></html>");
     }
 
