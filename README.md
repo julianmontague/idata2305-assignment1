@@ -1,6 +1,6 @@
 group 17
 
-# Assignement 1 
+# Assignment 1 
 
 ## Instructions
 a.	A README.md with instructions to run your code
@@ -19,7 +19,7 @@ When the file is run, the user can access it by opening up a browser and typing 
 b.	A section in your README.md or docs/REPORT.md documenting and explaining your observations.
 
 The observations made from the code can be found was that when the code was run single threaded, 
-it could only handle on request at a time. Therefore, the other if there were multiple users trying to access the server
+it could only handle on request at a time. Therefore, if there were multiple users trying to access the server
 at the same time, only the first user would be able to access the server.
 When the code was run multithreaded, it could handle multiple requests at the same time. 
 Therefore, all the users would be able to access the server at the same time.
